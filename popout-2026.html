@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popout | Xiqiao Chen</title>
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/navmobile-toggle.js"></script>
+
+    <!-- Popout 的样式只作用于本页，不需要修改公共 CSS。 -->
+    <style>
+        .popout-page .workviewleft { min-width: 0; }
+        .popout-page .popout-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .popout-page .popout-panel {
+            display: block;
+            position: relative;
+            flex: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            line-height: 0;
+            font-size: 0;
+        }
+        .popout-page .popout-panel > img,
+        .popout-page .popout-panel > video {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body class="popout-page">
+      <header>
+        <div class="top">
+            <div class="topleft font2"><a href="index.html">Xiqiao Chen</a></div>
+            <div class="topmiddle font2">
+                <p>xiqiao.cc@gmail</p>
+                <p>+1.857.472.4169</p>
+            </div>
+            <div class="topright"><a href="index.html">En</a>/<a href="workcn.html">中</a></div>
+            <div class="mobilemenu"><i class="iconfont icon-menu" id="menuToggle"></i></div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li class="active"><a href="work.html">Work&thinsp;/</a></li>
+                <li><a href="about.html">About&thinsp;/</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="workbox"> <div class="navmobile">
+            <ul>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+            <div class="mobilecontact">
+                <p>xiqiao.cc@gmail</p>
+                <p>+1.857.472.4169</p>
+            </div>
+        </div>
+<aside class="sidenav">
+<ul>
+<li><a href="branding.html">Branding</a></li>
+<li><a href="poster.html">Poster</a></li>
+<li><a href="editorial.html">Editorial</a></li>
+<li><a href="uidesign.html">Ul Design</a></li>
+</ul>
+
+</aside>
+<section class="workview">     
+<div class="workviewleft">
+<!-- 文件路径以 popout.html 所在目录为起点；素材放在 images/popout/。 -->
+<div class="popout-stack" aria-label="Popout project">
+    <div class="popout-panel" id="popout-01">
+        <img src="images/popout/popout-01.png" alt="Popout project — 01" loading="eager" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-02">
+        <img src="images/popout/popout-02.png" alt="Popout project — 02" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-03">
+        <img src="images/popout/popout-03.png" alt="Popout project — 03" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-04">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Popout animation 4">
+            <source src="images/popout/popout-04.mp4" type="video/mp4">
+            <a href="images/popout/popout-04.mp4">View animation</a>
+        </video>
+    </div>
+    <div class="popout-panel" id="popout-05">
+        <img src="images/popout/popout-05.png" alt="Popout project — 05" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-06">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Popout animation 6">
+            <source src="images/popout/popout-06.mp4" type="video/mp4">
+            <a href="images/popout/popout-06.mp4">View animation</a>
+        </video>
+    </div>
+    <div class="popout-panel" id="popout-07">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Popout animation 7">
+            <source src="images/popout/popout-07.mp4" type="video/mp4">
+            <a href="images/popout/popout-07.mp4">View animation</a>
+        </video>
+    </div>
+    <div class="popout-panel" id="popout-08">
+        <!-- 此页含局部动画：当前显示整页 PNG。需按 Figma 中的位置、尺寸另加视频覆盖层。 -->
+        <img src="images/popout/popout-08.png" alt="Popout project — 08" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-09">
+        <img src="images/popout/popout-09.png" alt="Popout project — 09" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-10">
+        <img src="images/popout/popout-10.png" alt="Popout project — 10" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-11">
+        <img src="images/popout/popout-11.png" alt="Popout project — 11" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-12">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Popout animation 12">
+            <source src="images/popout/popout-12.mp4" type="video/mp4">
+            <a href="images/popout/popout-12.mp4">View animation</a>
+        </video>
+    </div>
+    <div class="popout-panel" id="popout-13">
+        <img src="images/popout/popout-13.png" alt="Popout project — 13" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-14">
+        <img src="images/popout/popout-14.png" alt="Popout project — 14" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-15">
+        <img src="images/popout/popout-15.png" alt="Popout project — 15" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-16">
+        <img src="images/popout/popout-16.png" alt="Popout project — 16" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-17">
+        <img src="images/popout/popout-17.png" alt="Popout project — 17" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-18">
+        <img src="images/popout/popout-18.png" alt="Popout project — 18" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-19">
+        <img src="images/popout/popout-19.png" alt="Popout project — 19" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-20">
+        <img src="images/popout/popout-20.png" alt="Popout project — 20" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-21">
+        <img src="images/popout/popout-21.png" alt="Popout project — 21" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-22">
+        <img src="images/popout/popout-22.png" alt="Popout project — 22" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-23">
+        <img src="images/popout/popout-23.png" alt="Popout project — 23" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-24">
+        <!-- 此页含局部动画：当前显示整页 PNG。需按 Figma 中的位置、尺寸另加视频覆盖层。 -->
+        <img src="images/popout/popout-24.png" alt="Popout project — 24" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-25">
+        <img src="images/popout/popout-25.png" alt="Popout project — 25" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-26">
+        <img src="images/popout/popout-26.png" alt="Popout project — 26" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-27">
+        <img src="images/popout/popout-27.png" alt="Popout project — 27" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-28">
+        <img src="images/popout/popout-28.png" alt="Popout project — 28" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-29">
+        <img src="images/popout/popout-29.png" alt="Popout project — 29" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-30">
+        <img src="images/popout/popout-30.png" alt="Popout project — 30" loading="lazy" decoding="async">
+    </div>
+    <div class="popout-panel" id="popout-31">
+        <!-- 此页含局部动画：当前显示整页 PNG。需按 Figma 中的位置、尺寸另加视频覆盖层。 -->
+        <img src="images/popout/popout-31.png" alt="Popout project — 31" loading="lazy" decoding="async">
+    </div>
+</div>
+</div>
+<div class="workviewright">&nbsp;</div>
+
+</section>         
+    </main><div class="copyright">© 2023 Xiqiao Chen</div>
+</body>
+
+</html>
+
+
+
