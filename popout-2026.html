@@ -46,6 +46,127 @@
             border-radius: 0;
             box-shadow: none;
         }
+
+        /* 第 24 页：三张 Story 卡片，PNG 内容 + WebM 边缘光效。 */
+        .popout-page #popout-24 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3%;
+            aspect-ratio: 16 / 9;
+            background: #171713;
+            isolation: isolate;
+        }
+        .popout-page .popout-story {
+            position: relative;
+            flex: 0 0 22%;
+            width: 22%;
+            aspect-ratio: 358 / 739;
+            overflow: hidden;
+            border-radius: 7.82% / 3.79%;
+            isolation: isolate;
+            background: #171713;
+        }
+        .popout-page .popout-story > img,
+        .popout-page .popout-story > video {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .popout-page .popout-story > img { object-fit: contain; }
+        .popout-page .popout-story > video {
+            /* WebM 为 390×844，适配 PNG 的 358×739；只缩放光效。 */
+            object-fit: fill;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        /* 第 08 页：1920×1080 原图中的左侧 700×1000 动画。 */
+        .popout-page #popout-08 { aspect-ratio: 1920 / 1080; }
+        .popout-page .popout-color-animation {
+            position: absolute;
+            left: 1.97916667%; /* 38 / 1920 */
+            top: 3.61111111%; /* 39 / 1080 */
+            width: 36.45833333%; /* 700 / 1920 */
+            height: 92.59259259%; /* 1000 / 1080 */
+            overflow: hidden;
+            border-radius: 3.42857143% / 2.4%;
+            line-height: 0;
+        }
+        .popout-page .popout-color-animation > video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            object-fit: cover;
+        }
+
+        /* 第 03 页：以 1920×1000 背景为坐标，整张卡片覆盖为动画。 */
+        .popout-page #popout-03 { aspect-ratio: 1920 / 1000; }
+        .popout-page #popout-03 > .popout-overview-motion {
+            position: absolute;
+            display: block;
+            width: 31.25%; /* 600 / 1920 */
+            height: auto;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            object-fit: fill;
+            pointer-events: none;
+        }
+        .popout-page #popout-03 > .popout-overview-motion-1 {
+            left: 2.05729167%; /* 39.5 / 1920 */
+            top: 9.95%;
+            height: 32.85%;
+        }
+        .popout-page #popout-03 > .popout-overview-motion-2 {
+            left: 66.69270833%; /* 1280.5 / 1920 */
+            top: 9.95%;
+            height: 51.6%;
+        }
+        .popout-page #popout-03 > .popout-overview-motion-3 {
+            left: 66.69270833%;
+            top: 63.85%;
+            height: 26.2%;
+        }
+
+        /* 第 13 页：763×763 动画，黑色以 screen 混合，保留原图细线。 */
+        .popout-page #popout-13 {
+            aspect-ratio: 1920 / 1080;
+            isolation: isolate;
+            background: #000;
+        }
+        .popout-page #popout-13 > .popout-depth-animation {
+            position: absolute;
+            left: 1.66666667%; /* 32 / 1920 */
+            top: 29.16666667%; /* 315 / 1080 */
+            width: 39.73958333%; /* 763 / 1920 */
+            height: 70.64814815%; /* 763 / 1080 */
+            max-width: none;
+            max-height: none;
+            object-fit: contain;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -90,7 +211,7 @@
 </aside>
 <section class="workview">     
 <div class="workviewleft">
-<div class="viewtitle">POPOUT</div>
+<div class="viewtitle">POPOUT BRAND IDENTITY & DIGITAL EXPERIENCE</div>
 <div class="viewinfo">Typography, Branding, UI Design </div>
 
 <!-- 文件路径以 popout.html 所在目录为起点；素材放在 images/。 -->
@@ -102,7 +223,16 @@
         <img src="images/popout-02.png" alt="Popout project — 02" loading="lazy" decoding="async">
     </div>
     <div class="popout-panel" id="popout-03">
-        <img src="images/popout-03.png" alt="Popout project — 03" loading="lazy" decoding="async">
+        <img src="images/popout-03.png" width="1920" height="1000" alt="Popout brand overview" loading="lazy" decoding="async">
+        <video class="popout-overview-motion popout-overview-motion-1" autoplay muted loop playsinline preload="metadata" aria-label="Popout animated purple frame">
+            <source src="images/popout-03-1.mp4" type="video/mp4">
+        </video>
+        <video class="popout-overview-motion popout-overview-motion-2" autoplay muted loop playsinline preload="metadata" aria-label="Popout animated orange frame">
+            <source src="images/popout-03-2.mp4" type="video/mp4">
+        </video>
+        <video class="popout-overview-motion popout-overview-motion-3" autoplay muted loop playsinline preload="metadata" aria-label="Popout animated three logo rows">
+            <source src="images/popout-03-3.mp4" type="video/mp4">
+        </video>
     </div>
     <div class="popout-panel" id="popout-04">
         <video autoplay muted loop playsinline preload="metadata" aria-label="Popout animation 4">
@@ -126,8 +256,12 @@
         </video>
     </div>
     <div class="popout-panel" id="popout-08">
-        <!-- 此页含局部动画：当前显示整页 PNG。需按 Figma 中的位置、尺寸另加视频覆盖层。 -->
-        <img src="images/popout-08.png" alt="Popout project — 08" loading="lazy" decoding="async">
+        <img src="images/popout-08.png" width="1920" height="1080" alt="Popout color palette" loading="lazy" decoding="async">
+        <div class="popout-color-animation">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Popout animated color gradient">
+                <source src="images/popout-08-1.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
     <div class="popout-panel" id="popout-09">
         <img src="images/popout-09.png" alt="Popout project — 09" loading="lazy" decoding="async">
@@ -145,7 +279,10 @@
         </video>
     </div>
     <div class="popout-panel" id="popout-13">
-        <img src="images/popout-13.png" alt="Popout project — 13" loading="lazy" decoding="async">
+        <img src="images/popout-13.png" width="1920" height="1080" alt="Popout familiar, discovery and escape" loading="lazy" decoding="async">
+        <video class="popout-depth-animation" autoplay muted loop playsinline preload="metadata" aria-label="Popout animated depth gradients">
+            <source src="images/popout-13-1.webm" type="video/webm">
+        </video>
     </div>
     <div class="popout-panel" id="popout-14">
         <img src="images/popout-14.png" alt="Popout project — 14" loading="lazy" decoding="async">
@@ -177,9 +314,25 @@
     <div class="popout-panel" id="popout-23">
         <img src="images/popout-23.png" alt="Popout project — 23" loading="lazy" decoding="async">
     </div>
-    <div class="popout-panel" id="popout-24">
-        <!-- 此页含局部动画：当前显示整页 PNG。需按 Figma 中的位置、尺寸另加视频覆盖层。 -->
-        <img src="images/popout-24.png" alt="Popout project — 24" loading="lazy" decoding="async">
+    <div class="popout-panel" id="popout-24" aria-label="Popout animated Instagram Stories">
+        <div class="popout-story">
+            <img src="images/popout-24-1.png" width="358" height="739" alt="Popout Instagram Story 1" loading="lazy" decoding="async">
+            <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="images/popout-24-1.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="popout-story">
+            <img src="images/popout-24-2.png" width="358" height="739" alt="Popout Instagram Story 2" loading="lazy" decoding="async">
+            <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="images/popout-24-2.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="popout-story">
+            <img src="images/popout-24-3.png" width="358" height="739" alt="Popout Instagram Story 3" loading="lazy" decoding="async">
+            <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="images/popout-24-3.webm" type="video/webm">
+            </video>
+        </div>
     </div>
     <div class="popout-panel" id="popout-25">
         <img src="images/popout-25.png" alt="Popout project — 25" loading="lazy" decoding="async">
@@ -191,7 +344,7 @@
         <img src="images/popout-27.png" alt="Popout project — 27" loading="lazy" decoding="async">
     </div>
     <div class="popout-panel" id="popout-28">
-        <img src="images/popout-28.jpg" alt="Popout project — 28" loading="lazy" decoding="async">
+        <img src="images/popout-28.png" alt="Popout project — 28" loading="lazy" decoding="async">
     </div>
     <div class="popout-panel" id="popout-29">
         <img src="images/popout-29.png" alt="Popout project — 29" loading="lazy" decoding="async">
