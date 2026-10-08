@@ -221,6 +221,49 @@
             object-fit: fill;
         }
         .popout-page .popout-29-frame { pointer-events: none; }
+
+        /* 第 31 页：保留 1920×1251 原图比例，视频 + SVG 手机外框。 */
+        .popout-page #popout-31 {
+            aspect-ratio: 1920 / 1251;
+            background: #171713;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .popout-page .popout-31-phone {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20.83333333%;
+            aspect-ratio: 400 / 844;
+            transform: translate(-50%, -50%);
+        }
+        .popout-page .popout-31-screen {
+            position: absolute;
+            left: 1.25%;
+            top: 0;
+            width: 97.5%;
+            height: 100%;
+            border-radius: 5.12820513% / 2.36966825%;
+            overflow: hidden;
+            background: #000;
+        }
+        .popout-page .popout-31-screen > video,
+        .popout-page .popout-31-phone > .popout-31-frame {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            object-fit: fill;
+        }
+        .popout-page .popout-31-frame { pointer-events: none; }
     </style>
 </head>
 
@@ -425,9 +468,23 @@
     <div class="popout-panel" id="popout-30">
         <img src="images/popout-30.png" alt="Popout project — 30" loading="lazy" decoding="async">
     </div>
-    <div class="popout-panel" id="popout-31">
-        <!-- 此页含局部动画：当前显示整页 PNG。需按 Figma 中的位置、尺寸另加视频覆盖层。 -->
-        <img src="images/popout-31.png" alt="Popout project — 31" loading="lazy" decoding="async">
+    <div class="popout-panel" id="popout-31" aria-label="Popout animated discovery options">
+        <div class="popout-31-phone">
+            <div class="popout-31-screen">
+                <video autoplay muted loop playsinline preload="metadata" aria-label="Popout familiar, discovery and escape animation">
+                    <source src="images/popout-31-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- 视频已有顶部胶囊，SVG 仅保留外框及侧边按钮。 -->
+            <svg class="popout-31-frame" aria-hidden="true" focusable="false" width="400" height="844" viewBox="0 0 400 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<rect x="6" y="1" width="388" height="842" rx="19" stroke="#5B5B5B" stroke-width="2"/>
+<path d="M394 265H396.5C397.881 265 399 266.119 399 267.5V350.5C399 351.881 397.881 353 396.5 353H394V265Z" stroke="#5B5B5B" stroke-width="2"/>
+<path d="M6 235H3.5C2.11929 235 1 236.119 1 237.5V286.5C1 287.881 2.11929 289 3.5 289H6V235Z" stroke="#5B5B5B" stroke-width="2"/>
+<path d="M6 299H3.5C2.11929 299 1 300.119 1 301.5V350.5C1 351.881 2.11929 353 3.5 353H6V299Z" stroke="#5B5B5B" stroke-width="2"/>
+
+</svg>
+        </div>
     </div>
 </div>
 </div>
