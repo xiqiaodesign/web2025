@@ -167,6 +167,60 @@
             mix-blend-mode: screen;
             pointer-events: none;
         }
+/* 第 28 页：模糊背景 + 手机界面 + screen 渐变 + SVG 边框。 */
+.popout-page .popout-28-scene { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #55524a; isolation: isolate; }
+.popout-page .popout-28-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.popout-page .popout-28-phone { position: absolute; left: 50%; top: 50%; width: 20.833333%; aspect-ratio: 400 / 844; transform: translate(-50%, -50%); }
+.popout-page .popout-28-screen { position: absolute; left: 1.25%; top: 0; width: 97.5%; height: 100%; border-radius: 5.128205% / 2.369668%; overflow: hidden; isolation: isolate; background: #000; }
+.popout-page .popout-28-interface, .popout-page .popout-28-glow { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: fill; }
+.popout-page .popout-28-glow { mix-blend-mode: screen; pointer-events: none; }
+.popout-page .popout-28-frame { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+
+.popout-page .popout-28-phone img, .popout-page .popout-28-phone video { max-width: none; max-height: none; margin: 0; padding: 0; border: 0; box-shadow: none; }
+
+
+        /* 第 29 页：纯色背景 + 手机视频 + SVG 边框。 */
+        .popout-page #popout-29 {
+            aspect-ratio: 1920 / 1080;
+            background: #171713;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .popout-page .popout-29-phone {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20.83333333%; /* 400 / 1920 */
+            aspect-ratio: 400 / 844;
+            transform: translate(-50%, -50%);
+        }
+        .popout-page .popout-29-screen {
+            position: absolute;
+            left: 1.25%; /* 5 / 400 */
+            top: 0;
+            width: 97.5%; /* 390 / 400 */
+            height: 100%;
+            border-radius: 5.12820513% / 2.36966825%;
+            overflow: hidden;
+            background: #171713;
+        }
+        .popout-page .popout-29-screen > video,
+        .popout-page .popout-29-phone > .popout-29-frame {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            object-fit: fill;
+        }
+        .popout-page .popout-29-frame { pointer-events: none; }
     </style>
 </head>
 
@@ -344,10 +398,29 @@
         <img src="images/popout-27.png" alt="Popout project — 27" loading="lazy" decoding="async">
     </div>
     <div class="popout-panel" id="popout-28">
-        <img src="images/popout-28.png" alt="Popout project — 28" loading="lazy" decoding="async">
+<!-- Replace the existing static image for page 28 with this section. -->
+<section class="popout-28-scene" aria-label="Popout phone interface with animated purple edge glow">
+  <img class="popout-28-background" src="images/popout-28.png" alt="" width="2048" height="1152" loading="lazy">
+  <div class="popout-28-phone">
+    <div class="popout-28-screen">
+      <img class="popout-28-interface" src="images/popout-28-2.png" alt="Popout one-object study interface" width="390" height="844" loading="lazy">
+      <video class="popout-28-glow" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
+        <source src="images/popout-28.webm" type="video/webm">
+      </video>
     </div>
-    <div class="popout-panel" id="popout-29">
-        <img src="images/popout-29.png" alt="Popout project — 29" loading="lazy" decoding="async">
+    <img class="popout-28-frame" src="images/popout-phone-shape-gray.svg" alt="" width="400" height="844">
+  </div>
+</section>
+    </div>
+    <div class="popout-panel" id="popout-29" aria-label="Popout animated phone screen">
+        <div class="popout-29-phone">
+            <div class="popout-29-screen">
+                <video autoplay muted loop playsinline preload="metadata" aria-label="Popout phone animation">
+                    <source src="images/popout-29.mp4" type="video/mp4">
+                </video>
+            </div>
+            <img class="popout-29-frame" src="images/popout-phone-shape-gray.svg" alt="" width="400" height="844">
+        </div>
     </div>
     <div class="popout-panel" id="popout-30">
         <img src="images/popout-30.png" alt="Popout project — 30" loading="lazy" decoding="async">
@@ -362,6 +435,12 @@
 
 </section>         
     </main><div class="copyright">© 2023 Xiqiao Chen</div>
+<script>
+// 禁用本页右键菜单；此功能无法阻止截图或开发工具获取素材。
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+</script>
 </body>
 
 </html>
